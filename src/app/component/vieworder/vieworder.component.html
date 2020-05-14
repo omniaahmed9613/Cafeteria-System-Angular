@@ -1,0 +1,22 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">UserName</th>
+            <th scope="col">Order</th>
+            <th scope="col">Date</th>
+            <th scope="col">Processing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of obj">
+            <td>{{x.UserName}}</td>
+            <td>
+                <div *ngFor="let y of x.Array ">{{y.ProductName}}</div>
+            </td>
+            <td>{{x.Date | date:'short' }}</td>
+            <td>{{x.processing}}</td>
+            <td><button type="button" class="btn btn-outline-secondary" (click)="oncilckfunction(x._id)">Done</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
